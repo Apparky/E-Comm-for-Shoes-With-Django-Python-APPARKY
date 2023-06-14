@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+{% if slug %}
+    {% for s in slug %}
+        {{ s.blog_title }}
+    {% endfor %}
+
+{% else %}
+    Error...! {{ slug_name }}
+{% endif %}
+
+{% endblock title %}
+
+
+{% block bodyContent %}
+
+{% if slug %}
+
+    {% for s in slug %}
+
+        <header class="masthead" style="background-image: url({{ MIDEA_URL }}{{ s.blog_title_image.url }})">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1 style="color:white">{{ s.blog_title }}</h1>
+                            <h2 style="color:white" class="subheading">{{ s.blog_sub_title }}</h2>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">{{ s.author }}</a>
+                                on {{ s.blog_date_posted }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h2 class="section-heading">{{ s.blog_heading_1 }}</h2>
+                        <p>{{ s.blog_body_1 }}</p>
+                        <a href="{#!}"><img class="img-fluid" src="{{ MIDEA_URL }}{{ s.blog_image_1.url }}" alt="{{ s.sub_image_ALT_TAG_12 }}" /></a>
+
+                        {% if s.blog_heading_2 %}
+                        <h2 class="section-heading">{{ s.blog_heading_2 }}</h2>
+                        {% else %}
+                        <h2 class="section-heading"> &nbsp; </h2>
+                        {% endif %}
+
+                        <p>{{ s.blog_body_2 }}</p>
+                        <a href="{#!}"><img class="img-fluid" src="{{ MIDEA_URL }}{{ s.blog_image_2.url }}" alt="{{ s.sub_image_ALT_TAG_12 }}" /></a>
+
+                        {% if s.blog_heading_3 %}
+                        <h2 class="section-heading">{{ s.blog_heading_3 }}</h2>
+                        {% else %}
+                        <h2 class="section-heading"> &nbsp; </h2>
+                        {% endif %}                        
+                        
+                        <p>{{ s.blog_body_3 }}</p>
+                        <a href="{#!}"><img class="img-fluid" src="{{ MIDEA_URL }}{{ s.blog_image_3.url }}" alt="{{ s.sub_image_ALT_TAG_12 }}" /></a>
+
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    {% endfor %}
+
+{% else %}
+
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                      <h1>
+                        <p> <strong style="color:red">404</strong>  Not Found...! </p>
+                        <p> This page is not <strong style="color:red">Exists.!</strong></p>
+                      </h1>
+                      <p> <a href="{% url 'index' %}">Click Here!</a> to get back to <a href="{% url 'index' %}">Home Page</a> </p>
+                      <p> <a href="{% url 'blog' %}">Click Here!</a> to get back to <a href="{% url 'blog' %}"> Blog </a> </p>
+
+                    </div>
+                </div>
+            </div>
+        </article>
+
+{% endif %}
+
+{% endblock bodyContent %}

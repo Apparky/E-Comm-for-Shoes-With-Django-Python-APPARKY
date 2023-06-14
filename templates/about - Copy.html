@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    About US
+{% endblock title %}
+
+
+{% block bodyContent %}
+
+    <main id="main">
+      <section>
+        <div class="container" data-aos="fade-up">
+          <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+              <h1 class="page-title">About us</h1>
+            </div>
+          </div>
+
+          <div class="row mb-5">
+
+            {% for a in About %}
+              
+                <div class="d-md-flex post-entry-2 half">
+                  <a href="#" class="me-4 thumbnail">
+                    <img src="{{ MIDEA_URL }}{{ a.about_pic_1.url }}" alt="" class="img-fluid">
+                  </a>
+                  <div class="ps-md-5 mt-4 mt-md-0">
+                    <div class="post-meta mt-4">About us</div>
+                    <h2 class="mb-4 display-4">{{ a.sub_heading_1 }}</h2>
+
+                    <p>{{ a.sub_body_1 }}</p>
+                  </div>
+                </div>
+
+                <div class="d-md-flex post-entry-2 half mt-5">
+                  <a href="#" class="me-4 thumbnail order-2">
+                    <img src="{{ MIDEA_URL }}{{ a.about_pic_2.url }}" alt="" class="img-fluid">
+                  </a>
+                  <div class="pe-md-5 mt-4 mt-md-0">
+                    <div class="post-meta mt-4">Mission &amp; Vision</div>
+                    <h2 class="mb-4 display-4">{{ a.sub_heading_2 }}</h2>
+
+                    <p>{{ a.sub_body_2 }}</p>
+                  </div>
+                </div>
+
+            {% endfor %}
+            
+
+          </div>
+
+        </div>
+      </section>
+
+      {% for a in About %}
+      
+          <section class="mb-5 bg-light py-5">
+            <div class="container" data-aos="fade-up">
+              <div class="row justify-content-between align-items-lg-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                  <h2 class="display-4 mb-4">Latest News</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, rem eaque vel est asperiores iste pariatur placeat molestias, rerum provident ea maiores debitis eum earum esse quas architecto! Minima, voluptatum! Minus tempora distinctio quo sint est blanditiis voluptate eos. Commodi dolore nesciunt culpa adipisci nemo expedita suscipit autem dolorum rerum?</p>
+                  <p>At magni dolore ullam odio sapiente ipsam, numquam eius minus animi inventore alias quam fugit corrupti error iste laboriosam dolorum culpa doloremque eligendi repellat iusto vel impedit odit cum. Sequi atque molestias nesciunt rem eum pariatur quibusdam deleniti saepe eius maiores porro quam, praesentium ipsa deserunt laboriosam adipisci. Optio, animi!</p>
+                  <p><a href="#" class="more">View All Blog Posts</a></p>
+                </div>
+                <div class="col-lg-6">
+                  <div class="row">
+                    <div class="col-6">
+                      <img src="{{ MIDEA_URL }}{{ a.about_pic_3.url }}" alt="" class="img-fluid mb-4">
+                    </div>
+                    <div class="col-6 mt-4">
+                      <img src="{{ MIDEA_URL }}{{ a.about_pic_4.url }}" alt="" class="img-fluid mb-4">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+      {% endfor %}
+
+
+      <section>
+        <div class="container" data-aos="fade-up">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <div class="row justify-content-center">
+                <div class="col-lg-6">
+                  <h2 class="display-4">Our Team</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil sint sed, fugit distinctio ad eius itaque deserunt doloribus harum excepturi laudantium sit officiis et eaque blanditiis. Dolore natus excepturi recusandae.</p>
+                </div>
+              </div>
+            </div>
+
+            {% for OT in ourTeam reversed %}
+
+            <div class="col-lg-4 text-center mb-5">
+              <img src="{{ MIDEA_URL }}{{ OT.profile_ID.url }}" alt="" class="img-fluid rounded-circle w-50 mb-4">
+              <h3>{{ OT.name }}</h3>
+              <h6>from</h6>
+              <h4>{{ OT.company_name }}</h4>
+              <span class="d-block mb-3 text-uppercase">{{ OT.designation }}</span>
+              <p>{{ OT.about_designation }}</p>
+            </div>
+            
+            {% endfor %}
+
+          </div>
+        </div>
+      </section>
+
+    </main><!-- End #main -->
+
+{% endblock bodyContent %}
+
+

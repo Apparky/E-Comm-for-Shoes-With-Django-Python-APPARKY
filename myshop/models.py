@@ -107,7 +107,7 @@ class Contact_US(models.Model):
     action_taken = models.BooleanField(null=False, default=False)
 
     def __str__(self):
-        return self.cust_message_subject + ' Action ' + str(self.action_taken)
+        return f"{self.cust_name} {self.cust_message_subject} Action {str(self.action_taken)}"
 
 
 class About_US(models.Model):

@@ -142,7 +142,7 @@ class About_US(models.Model):
         return self.title
 
 
-class Out_Team(models.Model):
+class Our_Core_Team(models.Model):
     roll = (
         ('')
     )
@@ -166,7 +166,7 @@ class Out_Team(models.Model):
     personal_site = models.CharField(max_length=400, null=True, blank=True)
 
     def __str__(self):
-        return f'{self.name} {self.company_name}'
+        return f'{self.name} - {self.company_name} - {self.designation}'
 
 
 class Testimonials(models.Model):

@@ -107,7 +107,12 @@ class Contact_US(models.Model):
     action_taken = models.BooleanField(null=False, default=False)
 
     def __str__(self):
-        return f"{self.cust_name} {self.cust_message_subject} Action {str(self.action_taken)}"
+        if self.action_taken == True:
+            return f"{self.cust_name} --- {self.cust_message_subject} --- Action Taken"
+
+        else:
+            return f"{self.cust_name} --- {self.cust_message_subject} --- No Action Taken"
+
 
 
 class About_US(models.Model):

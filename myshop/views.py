@@ -82,6 +82,6 @@ def submit(request):
 
 
 def about(request):
-    team = Out_Team.objects.all()
+    team = Our_Core_Team.objects.all()
     about_ = About_US.objects.all()
     return render(request, 'about - Copy.html', {'ourTeam': team, 'About': about_})

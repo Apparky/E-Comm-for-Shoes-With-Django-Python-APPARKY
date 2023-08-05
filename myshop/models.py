@@ -4,18 +4,18 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 Product_For = (
-        ("N", None),
-        ("M", "Men"),
-        ("W", "Women"),
-        ("K", "Kids")
-    )
+    ("N", None),
+    ("M", "Men"),
+    ("W", "Women"),
+    ("K", "Kids")
+)
 
 Product_Type = (
-        ("N", None),
-        ("FW", "FootWear"),
-        ("WC", "Women's Clothing"),
-        ("S", "Shoes")
-    )
+    ("N", None),
+    ("FW", "FootWear"),
+    ("WC", "Women's Clothing"),
+    ("S", "Shoes")
+)
 
 
 class Background_Image(models.Model):
@@ -114,7 +114,6 @@ class Contact_US(models.Model):
             return f"{self.cust_name} --- {self.cust_message_subject} --- No Action Taken"
 
 
-
 class About_US(models.Model):
     title = models.CharField(max_length=200, null=False, default='Title Here')
     sub_heading_1 = models.CharField(max_length=300, null=False, default='Sub Heading 1')
@@ -127,21 +126,29 @@ class About_US(models.Model):
     about_desc = models.CharField(max_length=300, null=False, default='About Description')
     about_meta_data = models.CharField(max_length=600, null=False, default='Meta Description for About US')
     about_pic_1 = models.FileField(null=True, upload_to='midea/images/', default=None, blank=True)
-    about_pic_1_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture', blank=True)
+    about_pic_1_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture',
+                                           blank=True)
     about_pic_2 = models.FileField(null=True, upload_to='midea/images/', default=None, blank=True)
-    about_pic_2_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture', blank=True)
+    about_pic_2_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture',
+                                           blank=True)
     about_pic_3 = models.FileField(null=True, upload_to='midea/images/', default=None, blank=True)
-    about_pic_3_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture', blank=True)
+    about_pic_3_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture',
+                                           blank=True)
     about_pic_4 = models.FileField(null=True, upload_to='midea/images/', default=None, blank=True)
-    about_pic_4_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture', blank=True)
+    about_pic_4_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture',
+                                           blank=True)
     about_pic_5 = models.FileField(null=True, upload_to='midea/images/', default=None, blank=True)
-    about_pic_5_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture', blank=True)
+    about_pic_5_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture',
+                                           blank=True)
     about_pic_6 = models.FileField(null=True, upload_to='midea/images/', default=None, blank=True)
-    about_pic_6_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture', blank=True)
+    about_pic_6_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture',
+                                           blank=True)
     about_pic_7 = models.FileField(null=True, upload_to='midea/images/', default=None, blank=True)
-    about_pic_7_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture', blank=True)
+    about_pic_7_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture',
+                                           blank=True)
     about_pic_8 = models.FileField(null=True, upload_to='midea/images/', default=None, blank=True)
-    about_pic_8_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture', blank=True)
+    about_pic_8_atl_TAG = models.CharField(max_length=250, null=False, default='Add ALT Tag fro this Picture',
+                                           blank=True)
 
     def __str__(self):
         return self.title
